@@ -8,17 +8,11 @@ public class CameraWalker : MonoBehaviour
     private Vector3 offset;
     private bool isFounded = false;
 
-    void Start()
-    {
-        
-
-    }
-
     void Update()
     {
         if (!isFounded)
         {
-            player = GameObject.Find("Player(Clone)");
+            player = GameObject.Find("Vespa(Clone)");
             offset = transform.position - player.transform.position;
             isFounded = true;
         }

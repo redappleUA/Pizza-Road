@@ -1,9 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class VehicleSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject vehicle;
+    [SerializeField] List<GameObject> vehicles = new();
     [SerializeField] Transform spawnPos;
     [SerializeField] float minSeparationTime;
     [SerializeField] float maxSeparationTime;
@@ -18,7 +19,7 @@ public class VehicleSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(minSeparationTime, maxSeparationTime));
-            Instantiate(vehicle, spawnPos.position, Quaternion.identity);
+            Instantiate(vehicles[Random.Range(0, vehicles.Count)], spawnPos.position, Quaternion.Euler(0, 180, 0));
         }
     }
 }
