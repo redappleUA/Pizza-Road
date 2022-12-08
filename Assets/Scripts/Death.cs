@@ -6,18 +6,23 @@ public class Death : MonoBehaviour
 {
     private Factory factory;
 
-    private void Start() => factory = FindObjectOfType<Factory>().GetComponent<Factory>();
+    private void Awake() => factory = FindObjectOfType<Factory>().GetComponent<Factory>();
     private void LateUpdate()
     {
         if (transform.position.z < -1)
         {
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
-            gameObject.GetComponent<Rigidbody>().freezeRotation = false;
+            Defeat(gameObject);
         }
+#warning TODO: Game Screen
         if (factory.PizzaCount == 0) //TODO: Game Screen
         {
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
-            gameObject.GetComponent<Rigidbody>().freezeRotation = false;
+            Defeat(gameObject);
         }
+    }
+
+    public static void Defeat(GameObject player)
+    {
+        player.GetComponent<Rigidbody>().useGravity = true;
+        player.GetComponent<Rigidbody>().freezeRotation = false;
     }
 }

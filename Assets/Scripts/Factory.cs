@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Factory : MonoBehaviour
@@ -9,20 +8,20 @@ public class Factory : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject pizzaHouse;
     [SerializeField] GameObject pizzaPrefab;
+    [SerializeField] GameObject finishTrigger;
+    [SerializeField] int spawnCount;
 
     private GameObject player;
     private const float roadLength = 12;
     private Vector3 currentPosition = new(0, 0, 0);
     private int lastValue;
-    
-    public List<GameObject> PizzaList { get; set; }
+
+    public List<GameObject> PizzaList { get; set; } = new();
     public int PizzaCount { get; set; }
 
     void Start()
     {
-        PizzaList = new List<GameObject>();
-
-        for(int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++)
         {
             Instantiate(roads[0], currentPosition, Quaternion.identity);
             currentPosition.x += roadLength;
@@ -34,10 +33,6 @@ public class Factory : MonoBehaviour
         Instantiate(pizzaHouse, new Vector3(8.5f, 0, 10), Quaternion.Euler(0, -90, 0));
 
         PizzaSpawn();
-    }
-
-    void Update()
-    {
     }
 
     int UniqueRandom(int min, int max)
@@ -53,10 +48,19 @@ public class Factory : MonoBehaviour
 
     void SpawnRoad()
     {
-        for(int i = 0; i < 30; i++) 
+        for (int i = 0; i <= spawnCount; i++)
         {
-            Instantiate(roads[UniqueRandom(0, roads.Count)], currentPosition, Quaternion.identity);
+            Instantiate(roads[UniqueRandom(1, roads.Count)], currentPosition, Quaternion.identity);
             currentPosition.x += roadLength;
+
+            Instantiate(roads[0], currentPosition, Quaternion.identity);
+            currentPosition.x += roadLength;
+
+            if(i == spawnCount)
+            {
+                Instantiate(roads[0], currentPosition, Quaternion.identity);
+                Instantiate(finishTrigger, currentPosition, Quaternion.identity);
+            }
         }
     }
 
@@ -68,7 +72,7 @@ public class Factory : MonoBehaviour
         for (int i = 0; i < PizzaCount; i++)
         {
             var pizza = Instantiate(pizzaPrefab, pizzaSpawnPos, Quaternion.Euler(0, 0, 9.648f), player.transform);
-            pizzaSpawnPos.y += 0.1f;
+            pizzaSpawnPos.y += 0.2f;
             pizzaSpawnPos.x -= 0.03f;
             PizzaList.Add(pizza);
         }

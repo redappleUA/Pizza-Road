@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5466068073540131540}
   - component: {fileID: 1808801060708080650}
   - component: {fileID: 7319994072270129041}
+  - component: {fileID: 2769820652954907602}
   m_Layer: 0
   m_Name: pizza_01 slice 02
   m_TagString: Untagged
@@ -100,6 +101,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &2769820652954907602
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536174323827863739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2951200278936151375, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &1969700967645445502
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +127,7 @@ GameObject:
   - component: {fileID: 2762885812816847133}
   - component: {fileID: 5348014750244286320}
   - component: {fileID: 6701738973974772117}
+  - component: {fileID: 6845280337556509530}
   m_Layer: 0
   m_Name: pizza_01 top
   m_TagString: Untagged
@@ -200,6 +216,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6845280337556509530
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969700967645445502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 51004255319822229, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &2488615507539452749
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +242,7 @@ GameObject:
   - component: {fileID: 3099090460669812129}
   - component: {fileID: 3136800895391485664}
   - component: {fileID: 4341612242035557572}
+  - component: {fileID: 8328533981000609141}
   m_Layer: 0
   m_Name: pizza_01 slice 01
   m_TagString: Untagged
@@ -300,6 +331,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &8328533981000609141
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2488615507539452749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1181603456866218512, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &2735465005772526773
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +357,7 @@ GameObject:
   - component: {fileID: 4245047757227830949}
   - component: {fileID: 9047924692400144014}
   - component: {fileID: 3980762817615061824}
+  - component: {fileID: 8489871424525019829}
   m_Layer: 0
   m_Name: pizza_01 slice 07
   m_TagString: Untagged
@@ -400,6 +446,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &8489871424525019829
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735465005772526773}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3318066605673815904, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &3071986249825762837
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +472,7 @@ GameObject:
   - component: {fileID: 889188302698261683}
   - component: {fileID: 7192010527371329235}
   - component: {fileID: 2752122986231846751}
+  - component: {fileID: 673947638159457533}
   m_Layer: 0
   m_Name: pizza_01 bottom
   m_TagString: Untagged
@@ -500,6 +561,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &673947638159457533
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071986249825762837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4718149722267720404, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &3249482263116753110
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +587,7 @@ GameObject:
   - component: {fileID: 2159214431546750398}
   - component: {fileID: 6785592489607842448}
   - component: {fileID: 6616386608463441226}
+  - component: {fileID: 4217228893584797045}
   m_Layer: 0
   m_Name: pizza_01 slice 03
   m_TagString: Untagged
@@ -600,6 +676,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &4217228893584797045
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3249482263116753110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 927951279116395466, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &4294351467393615484
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +702,7 @@ GameObject:
   - component: {fileID: 8966259235294593509}
   - component: {fileID: 4422589647160200455}
   - component: {fileID: 9078446599373341684}
+  - component: {fileID: 2305292006361075347}
   m_Layer: 0
   m_Name: pizza_01 slice 04
   m_TagString: Untagged
@@ -700,6 +791,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &2305292006361075347
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294351467393615484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3323827652332443259, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &4390679083592924407
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +858,7 @@ GameObject:
   - component: {fileID: 5341611876442121744}
   - component: {fileID: 3669249525274668658}
   - component: {fileID: 2855432732940009072}
+  - component: {fileID: 2348259018459351791}
   m_Layer: 0
   m_Name: pizza_01 slice 08
   m_TagString: Untagged
@@ -841,6 +947,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &2348259018459351791
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419581781394098173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 446496910872217468, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &6419910508384912694
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +973,7 @@ GameObject:
   - component: {fileID: 3445105009392066289}
   - component: {fileID: 7624253842646687362}
   - component: {fileID: 6204894054630975216}
+  - component: {fileID: 2909735629707787359}
   m_Layer: 0
   m_Name: pizza_01 slice 05
   m_TagString: Untagged
@@ -941,6 +1062,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &2909735629707787359
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6419910508384912694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7457836538802540490, guid: f0262cba8a42f4442b58b5495def574a, type: 3}
 --- !u!1 &6783727998745129838
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +1088,7 @@ GameObject:
   - component: {fileID: 20741308634832783}
   - component: {fileID: 1486807171845871657}
   - component: {fileID: 2208669494411737847}
+  - component: {fileID: 7548286416497257117}
   m_Layer: 0
   m_Name: pizza_01 slice 06
   m_TagString: Untagged
@@ -1041,3 +1177,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &7548286416497257117
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783727998745129838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1869708219094097493, guid: f0262cba8a42f4442b58b5495def574a, type: 3}

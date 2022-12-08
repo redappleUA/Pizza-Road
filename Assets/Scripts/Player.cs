@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float speed;
+    public float speed { get; private set; }
     private Factory factory;
+    public bool isStartMoving { get; private set; } = false;
 
-    private void Start() => factory = FindObjectOfType<Factory>();
-    private void Update()
+    private void Awake() => factory = FindObjectOfType<Factory>();
+    private void FixedUpdate()
     {
         if(speed < 10)
         {
-            if (Input.GetKeyDown(KeyCode.W)) speed++;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                speed++;
+                isStartMoving = true;
+            }
         }
 
         if(speed > 0)
@@ -20,17 +25,16 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.S)) speed--;
         }
 
-        gameObject.transform.Translate(speed * Time.deltaTime * Vector3.down);
+        gameObject.transform.Translate(speed * Time.fixedDeltaTime * Vector3.down);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         speed = 0;
 
-        if(factory.PizzaCount > 0) 
+        if(factory.PizzaCount > 0 && collision.gameObject.CompareTag("Vehicle")) 
         {
             factory.PizzaList[^1].transform.parent = null;
-            //factory.PizzaList[^1].transform.Translate(10 * Time.deltaTime * Vector3.up);
 
             foreach (var item in factory.PizzaList[^1].GetComponentsInChildren<Rigidbody>())
                 item.GetComponent<Rigidbody>().isKinematic = false;
@@ -38,8 +42,7 @@ public class Player : MonoBehaviour
 
             factory.PizzaList.RemoveAt(factory.PizzaList.Count - 1);
             factory.PizzaCount--;
-
+                
         }
-        print(factory.PizzaCount);
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,12 +156,12 @@ MonoBehaviour:
   - {fileID: 7602010855956913919, guid: 8bb2da1dcfcbd484cbd0b5106541fd12, type: 3}
   - {fileID: 1680006441812850893, guid: 9e38d1d7c7b2e0f42a5b13eba749be29, type: 3}
   - {fileID: 4544687445411306192, guid: efe989cfa53dd5541b5dc719eb02d4fd, type: 3}
-  - {fileID: 7602010855956913919, guid: 8bb2da1dcfcbd484cbd0b5106541fd12, type: 3}
-  - {fileID: 7602010855956913919, guid: 8bb2da1dcfcbd484cbd0b5106541fd12, type: 3}
   - {fileID: 3244209791002782429, guid: 93d150929d1ece442b62ef25e1b13716, type: 3}
   playerPrefab: {fileID: 5210274314742959533, guid: a3fd77bd04aaff241898e06804ef3f71, type: 3}
   pizzaHouse: {fileID: 100000, guid: 601b00ca0b9de0247beae089ec7e640f, type: 3}
   pizzaPrefab: {fileID: 4390679083592924407, guid: fa44f0d9a5a05314ea800e30dbcc564a, type: 3}
+  finishTrigger: {fileID: 8874409298755013981, guid: 7cd8e295ae217504c96ee4b2c4d76d55, type: 3}
+  spawnCount: 10
 --- !u!4 &366487844
 Transform:
   m_ObjectHideFlags: 0
@@ -368,6 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49055c63a4c26746bc72430f5d990c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnitudeToDeath: 31.5
+  speedToDeath: 1.45
 --- !u!1001 &6632694313240755633
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class Vehicle : MonoBehaviour
 {
     float speed;
 
-    private void Start()
+    private void Awake()
     {
         speed = Random.Range(4, 6);
     }
