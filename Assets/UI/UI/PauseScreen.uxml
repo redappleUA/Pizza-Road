@@ -5,8 +5,8 @@
             <ui:Button display-tooltip-when-elided="true" name="PauseButton" class="pause-button" style="height: 25%;" />
         </ui:GroupBox>
         <ui:VisualElement name="ButtonBox" class="button-box">
-            <ui:Button text="Restart" display-tooltip-when-elided="true" name="RestartButton" enable-rich-text="true" class="button" style="font-size: 14%; -unity-font-style: bold; -unity-slice-left: -9; -unity-slice-top: -9; -unity-slice-right: -9; -unity-slice-bottom: -9;" />
-            <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" enable-rich-text="false" class="button" style="justify-content: center; align-items: center; -unity-font-style: bold; font-size: 14%; width: 70%; height: 26%; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; -unity-slice-left: -9; -unity-slice-top: -9; -unity-slice-right: -9; -unity-slice-bottom: -9;" />
+            <ui:Button text="Restart" display-tooltip-when-elided="true" name="RestartButton" enable-rich-text="true" class="button" style="font-size: 14%; -unity-font-style: bold; -unity-slice-left: -9; -unity-slice-top: -9; -unity-slice-right: -9; -unity-slice-bottom: -9; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" enable-rich-text="false" class="button" style="justify-content: center; align-items: center; -unity-font-style: bold; font-size: 14%; width: 70%; height: 26%; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; -unity-slice-left: -9; -unity-slice-top: -9; -unity-slice-right: -9; -unity-slice-bottom: -9; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -11,6 +11,7 @@ public class GameOverScreen : MonoBehaviour
     private Button exitButton;
 
     private HUDScreen hudScreen;
+    private bool isClicked = false;
     private static Score scorePoint;
 
     private void Awake()
@@ -21,9 +22,14 @@ public class GameOverScreen : MonoBehaviour
     }
     void RestartButtonPressed()
     {
-        Factory.spawnCount = 4;
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Game");
+        if (!isClicked) //It clicked many times cause event system is bugging
+        {
+            Factory.spawnCount = 4;
+            Time.timeScale = 1;
+            SceneManager.LoadScene("Game");
+
+            isClicked = true;
+        }
     }
 
     public static void ExitButtonPressed() => Application.Quit();
