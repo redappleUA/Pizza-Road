@@ -7,11 +7,15 @@ public class Player : MonoBehaviour
     public float speed { get; set; } = 0;
     private Factory factory;
     private string rotationDirection;
+    private Score score;
     public bool isStartMoving { get; private set; } = false;
+    private bool isStartTiming = false;
 
     private void Awake()
     {
         factory = FindObjectOfType<Factory>();
+        score = FindObjectOfType<Score>();
+
         SwipeDetection.SwipeEvent += OnSwipe;
     }
     private void FixedUpdate()
@@ -36,6 +40,12 @@ public class Player : MonoBehaviour
         }
 
         gameObject.transform.Translate(speed * Time.fixedDeltaTime * Vector3.down);
+
+        if(isStartMoving && !isStartTiming)
+        {
+            score.StartTimer();
+            isStartTiming = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -52,7 +62,8 @@ public class Player : MonoBehaviour
 
             factory.PizzaList.RemoveAt(factory.PizzaList.Count - 1);
             factory.PizzaCount--;
-                
+
+            score.PizzaFalling();
         }
     }
 

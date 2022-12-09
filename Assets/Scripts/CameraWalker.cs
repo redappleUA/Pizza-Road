@@ -7,35 +7,36 @@ public class CameraWalker : MonoBehaviour
     private GameObject player;
     private Vector3 offset;
     private Vector3 offsetStop;
-    private bool isFounded = false;
     private Player playerInst;
 
     [SerializeField] private float magnitudeToDeath;
     [SerializeField] private float speedToDeath;
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+        offset = transform.position - player.transform.position;
+        playerInst = player.GetComponent<Player>();
+    }
     void FixedUpdate()
     {
-        if (!isFounded)
-        {
-            player = GameObject.Find("Player(Clone)");
-            offset = transform.position - player.transform.position;
-            playerInst = player.GetComponent<Player>(); 
-            isFounded = true;
-        }
         
         if (playerInst.isStartMoving)
         {
             if (playerInst.speed < 1)
             {
-                transform.position += speedToDeath * Time.fixedDeltaTime * Vector3.right;
-                offsetStop = transform.position - player.transform.position;
-
-                if (offsetStop.magnitude < magnitudeToDeath)
+                if (FinishScreen.isFinished is false)
                 {
-#warning TODO: Game Screen
-                    Death.Defeat(player);
+                    transform.position += speedToDeath * Time.fixedDeltaTime * Vector3.right;
+                    offsetStop = transform.position - player.transform.position;
+
+                    if (offsetStop.magnitude < magnitudeToDeath)
+                    {
+                        Death.Defeat(player);
+                    }
                 }
             }
-            else if (isFounded)
+            else
             {
                 if (offsetStop.magnitude < offset.magnitude)
                 {

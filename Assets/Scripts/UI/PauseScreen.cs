@@ -10,6 +10,7 @@ public class PauseScreen : MonoBehaviour
     private Button exitButton;
 
     private HUDScreen screen;
+    private Score score;
     private void Awake()
     {
         gameObject.SetActive(false);
@@ -17,7 +18,10 @@ public class PauseScreen : MonoBehaviour
     }
     public void OpenPauseScreen()
     {
+        score = FindObjectOfType<Score>();
         gameObject.SetActive(true);
+        screen.gameObject.SetActive(false);
+        score.StopTimer();
 
         var root = GetComponent<UIDocument>().rootVisualElement;
 
@@ -37,5 +41,6 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = 1;
         gameObject.SetActive(false);
         screen.OpenHUDScreen();
+        score.ResumeTimer();
     }
 }

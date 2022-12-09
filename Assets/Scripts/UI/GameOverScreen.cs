@@ -11,20 +11,21 @@ public class GameOverScreen : MonoBehaviour
     private Button exitButton;
 
     private HUDScreen hudScreen;
+    private static Score scorePoint;
 
     private void Awake()
     {
         gameObject.SetActive(false);
         hudScreen = FindObjectOfType<HUDScreen>();
+        scorePoint = FindObjectOfType<Score>();
     }
     public static void RestartButtonPressed()
     {
         Time.timeScale = 1;
-        //Score.ScorePoints = 0;
         SceneManager.LoadScene("Game");
     }
     public static void ExitButtonPressed() => Application.Quit();
-    public void OpenGameOverScreen() //int scorePoint
+    public void OpenGameOverScreen()
     {
         hudScreen.gameObject.SetActive(false);
         gameObject.SetActive(true);
@@ -35,10 +36,10 @@ public class GameOverScreen : MonoBehaviour
         exitButton = root.Q<Button>("ExitButton");
         score = root.Q<Label>("Score");
 
-        restartButton.clicked += RestartButtonPressed;
+        restartButton.clicked += delegate () { FinishScreen.NextButtonPressed(); };
         exitButton.clicked += ExitButtonPressed;
 
-        //score.text = "Score: " + scorePoint.ToString();
-        //score.style.display = DisplayStyle.Flex;
+        score.text = "Score: " + scorePoint.ScorePoint.ToString();
+        score.style.display = DisplayStyle.Flex;
     }
 }

@@ -11,6 +11,7 @@ public class Finish : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            other.GetComponent<Player>().speed = 0;
             fScreen.OpenFinishScreen();
         }
     }

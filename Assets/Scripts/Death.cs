@@ -28,6 +28,7 @@ public class Death : MonoBehaviour
         rb.useGravity = true;
         rb.isKinematic = false;
 
-        gameOverScreen.OpenGameOverScreen();
+        if(FinishScreen.isFinished is false)
+            gameOverScreen.OpenGameOverScreen();
     }
 }

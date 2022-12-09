@@ -28,7 +28,7 @@ public class Factory : MonoBehaviour
         }
         SpawnRoad();
 
-        player = Instantiate(playerPrefab, new Vector3(-0.9f, 0.6f, 0f), Quaternion.Euler(-90, 90, 0));
+        player = GameObject.FindGameObjectWithTag("Player");
 
         Instantiate(pizzaHouse, new Vector3(8.5f, 0, 10), Quaternion.Euler(0, -90, 0));
 
@@ -61,7 +61,7 @@ public class Factory : MonoBehaviour
                 Instantiate(roads[0], currentPosition, Quaternion.identity);
                 Instantiate(finishTrigger, currentPosition, Quaternion.identity);
 
-                currentPosition.x += 3;
+                currentPosition.x += 6;
                 Instantiate(HouseSpawner.house, currentPosition, Quaternion.Euler(0, -90, 0));
             }
         }
