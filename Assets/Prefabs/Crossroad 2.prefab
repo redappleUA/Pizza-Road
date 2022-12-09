@@ -66,9 +66,68 @@ Transform:
   - {fileID: 7694237410228802172}
   - {fileID: 2017412372088407603}
   - {fileID: 7164298083426600735}
+  - {fileID: 5026870266029629719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4835972720475413166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5026870266029629719}
+  - component: {fileID: 4543755479282019117}
+  - component: {fileID: 429796998356699239}
+  m_Layer: 0
+  m_Name: Destroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5026870266029629719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835972720475413166}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.31, y: 5.92, z: -43.1}
+  m_LocalScale: {x: 9.548749, y: 11.827, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1724857409800035312}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4543755479282019117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835972720475413166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &429796998356699239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835972720475413166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65dfa10437b9644aa81ee279eff95c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6434926543110852705
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +232,10 @@ MonoBehaviour:
   - {fileID: 100000, guid: 6aad3078276ab4d47916c4d88e1722cd, type: 3}
   - {fileID: 100000, guid: 8db24802b0170464c9267f3c45e6f7ea, type: 3}
   - {fileID: 100000, guid: ec26b982f5502de469093462f7c99703, type: 3}
+  - {fileID: 103238, guid: 010ab566711b9084fad5f5ed2c31d831, type: 3}
+  - {fileID: 315445012725575869, guid: f56f01b115c934b64989066fa476eca6, type: 3}
+  - {fileID: 7274006608661370056, guid: 9746979f59e694feab90f89d54d783b0, type: 3}
+  - {fileID: 1208338212056041311, guid: 3ef7289946b204a5793aa0a6014e4dc6, type: 3}
   spawnPos: {fileID: 528259710383215847}
 --- !u!1 &6670186130639398509
 GameObject:

@@ -48,6 +48,10 @@ MonoBehaviour:
   - {fileID: 100000, guid: 6aad3078276ab4d47916c4d88e1722cd, type: 3}
   - {fileID: 100000, guid: 8db24802b0170464c9267f3c45e6f7ea, type: 3}
   - {fileID: 100000, guid: ec26b982f5502de469093462f7c99703, type: 3}
+  - {fileID: 7274006608661370056, guid: 9746979f59e694feab90f89d54d783b0, type: 3}
+  - {fileID: 315445012725575869, guid: f56f01b115c934b64989066fa476eca6, type: 3}
+  - {fileID: 1000011016130100, guid: b35c62a8a6f3c33439eae72c357c31ec, type: 3}
+  - {fileID: 176465215707318053, guid: 2557362e4e8bcfe4486030fd8a78182a, type: 3}
   spawnPos: {fileID: 6002400508598082511}
 --- !u!1 &1095030711747397487
 GameObject:
@@ -285,6 +289,7 @@ Transform:
   - {fileID: 7463043341347765501}
   - {fileID: 44006835131505022}
   - {fileID: 8838082725992613578}
+  - {fileID: 3444377648583376099}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -381,6 +386,64 @@ Transform:
   m_Father: {fileID: 1178875732999583110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8139607558238647246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3444377648583376099}
+  - component: {fileID: 3872033774026491657}
+  - component: {fileID: 1420862006972932230}
+  m_Layer: 0
+  m_Name: Destroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3444377648583376099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139607558238647246}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.31, y: 5.92, z: -43.1}
+  m_LocalScale: {x: 13.578027, y: 11.827, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4533207096675003070}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3872033774026491657
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139607558238647246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1420862006972932230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139607558238647246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65dfa10437b9644aa81ee279eff95c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &554007209512890298
 PrefabInstance:
   m_ObjectHideFlags: 0

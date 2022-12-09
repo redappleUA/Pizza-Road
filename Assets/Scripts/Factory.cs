@@ -28,7 +28,7 @@ public class Factory : MonoBehaviour
         }
         SpawnRoad();
 
-        player = Instantiate(playerPrefab, new Vector3(-0.9f, 0.53f, 0f), Quaternion.Euler(-90, 90, 0));
+        player = Instantiate(playerPrefab, new Vector3(-0.9f, 0.6f, 0f), Quaternion.Euler(-90, 90, 0));
 
         Instantiate(pizzaHouse, new Vector3(8.5f, 0, 10), Quaternion.Euler(0, -90, 0));
 
@@ -60,6 +60,9 @@ public class Factory : MonoBehaviour
             {
                 Instantiate(roads[0], currentPosition, Quaternion.identity);
                 Instantiate(finishTrigger, currentPosition, Quaternion.identity);
+
+                currentPosition.x += 3;
+                Instantiate(HouseSpawner.house, currentPosition, Quaternion.Euler(0, -90, 0));
             }
         }
     }
@@ -72,7 +75,7 @@ public class Factory : MonoBehaviour
         for (int i = 0; i < PizzaCount; i++)
         {
             var pizza = Instantiate(pizzaPrefab, pizzaSpawnPos, Quaternion.Euler(0, 0, 9.648f), player.transform);
-            pizzaSpawnPos.y += 0.2f;
+            pizzaSpawnPos.y += 0.1f;
             pizzaSpawnPos.x -= 0.03f;
             PizzaList.Add(pizza);
         }

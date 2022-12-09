@@ -1,28 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Death : MonoBehaviour
 {
     private Factory factory;
+    private static GameOverScreen gameOverScreen;
 
-    private void Awake() => factory = FindObjectOfType<Factory>().GetComponent<Factory>();
-    private void LateUpdate()
+    private void Awake()
     {
-        if (transform.position.z < -1)
+        factory = FindObjectOfType<Factory>();
+        gameOverScreen = FindObjectOfType<GameOverScreen>(true);
+    }
+    private void FixedUpdate()
+    {
+        if (factory.PizzaCount == 0)
         {
-            Defeat(gameObject);
-        }
-#warning TODO: Game Screen
-        if (factory.PizzaCount == 0) //TODO: Game Screen
-        {
-            Defeat(gameObject);
+            gameOverScreen.OpenGameOverScreen();
         }
     }
 
     public static void Defeat(GameObject player)
     {
-        player.GetComponent<Rigidbody>().useGravity = true;
-        player.GetComponent<Rigidbody>().freezeRotation = false;
+        player.GetComponent<Player>().speed = 0;
+        var rb = player.GetComponent<Rigidbody>();
+        rb.useGravity = true;
+        rb.isKinematic = false;
+
+        gameOverScreen.OpenGameOverScreen();
     }
 }

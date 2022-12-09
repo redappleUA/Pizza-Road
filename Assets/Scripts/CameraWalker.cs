@@ -16,7 +16,7 @@ public class CameraWalker : MonoBehaviour
     {
         if (!isFounded)
         {
-            player = GameObject.Find("Vespa(Clone)");
+            player = GameObject.Find("Player(Clone)");
             offset = transform.position - player.transform.position;
             playerInst = player.GetComponent<Player>(); 
             isFounded = true;
@@ -29,9 +29,9 @@ public class CameraWalker : MonoBehaviour
                 transform.position += speedToDeath * Time.fixedDeltaTime * Vector3.right;
                 offsetStop = transform.position - player.transform.position;
 
-                print(offsetStop.magnitude);
                 if (offsetStop.magnitude < magnitudeToDeath)
                 {
+#warning TODO: Game Screen
                     Death.Defeat(player);
                 }
             }
@@ -39,6 +39,7 @@ public class CameraWalker : MonoBehaviour
             {
                 if (offsetStop.magnitude < offset.magnitude)
                 {
+                    transform.position += speedToDeath * Time.fixedDeltaTime * Vector3.right;
                     offsetStop = transform.position - player.transform.position;
                 }
                 else

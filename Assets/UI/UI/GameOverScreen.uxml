@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UI/Styles/main.uss?fileID=7433441132597879392&amp;guid=a16aea11c42239e499967391fb6151ea&amp;type=3#main" />
+    <ui:VisualElement name="Screen" style="height: 100%; justify-content: flex-start; align-items: center; border-top-left-radius: 3%; border-bottom-left-radius: 1%; border-top-right-radius: 3%; border-bottom-right-radius: 20%; width: 100%;">
+        <ui:Label text="Defeat ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯" display-tooltip-when-elided="true" name="DefeatLabel" style="width: 70%; height: 25%; -unity-text-align: middle-center; font-size: 30%; -unity-font-style: bold; color: rgb(255, 0, 29);" />
+        <ui:Label text="Score: " display-tooltip-when-elided="true" enable-rich-text="false" name="Score" class="score" style="width: 100%; height: 10%; font-size: 30%; -unity-text-align: upper-center; color: rgba(255, 255, 255, 255);" />
+        <ui:VisualElement name="ButtonBox" class="button-box">
+            <ui:Button text="Restart" display-tooltip-when-elided="true" name="RestartButton" class="button" style="font-size: 14%; -unity-font-style: bold; -unity-slice-left: -9; -unity-slice-top: -9; -unity-slice-right: -9; -unity-slice-bottom: -9;" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" enable-rich-text="false" class="button" style="justify-content: center; align-items: center; -unity-font-style: bold; font-size: 14%; width: 70%; height: 26%; border-top-left-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; -unity-slice-left: -9; -unity-slice-top: -9; -unity-slice-right: -9; -unity-slice-bottom: -9;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

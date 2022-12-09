@@ -173,6 +173,11 @@ MonoBehaviour:
   - {fileID: 100000, guid: 8db24802b0170464c9267f3c45e6f7ea, type: 3}
   - {fileID: 100000, guid: 4e3b8318a9112f24d84095e1a4d96ae0, type: 3}
   - {fileID: 100000, guid: ec26b982f5502de469093462f7c99703, type: 3}
+  - {fileID: 103238, guid: 010ab566711b9084fad5f5ed2c31d831, type: 3}
+  - {fileID: 198048, guid: cad78765caccb034584e2d71888df418, type: 3}
+  - {fileID: 8641047332714037405, guid: dab3d93fd2764dc45988adf7d412c1b3, type: 3}
+  - {fileID: 176465215707318053, guid: 2557362e4e8bcfe4486030fd8a78182a, type: 3}
+  - {fileID: 1208338212056041311, guid: 3ef7289946b204a5793aa0a6014e4dc6, type: 3}
   spawnPos: {fileID: 3344512823828124007}
 --- !u!1 &8552448218782848503
 GameObject:
