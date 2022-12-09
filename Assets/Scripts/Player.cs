@@ -20,31 +20,36 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(speed < 10)
+        if (!Death.isDefeat && !FinishScreen.isFinished) //Block the moving after death/victory
         {
-            if (rotationDirection is "up")
+            //Move faster
+            if (speed < 10)
             {
-                speed++;
-                isStartMoving = true;
-                rotationDirection = null;
+                if (rotationDirection is "up")
+                {
+                    speed++;
+                    isStartMoving = true;
+                    rotationDirection = null;
+                }
             }
-        }
-
-        if(speed > 0)
-        {
-            if (rotationDirection is "down")
+            //Move slowly
+            if (speed > 0)
             {
-                speed--;
-                rotationDirection = null;
+                if (rotationDirection is "down")
+                {
+                    speed--;
+                    rotationDirection = null;
+                }
             }
-        }
 
-        gameObject.transform.Translate(speed * Time.fixedDeltaTime * Vector3.down);
+            gameObject.transform.Translate(speed * Time.fixedDeltaTime * Vector3.down);
 
-        if(isStartMoving && !isStartTiming)
-        {
-            score.StartTimer();
-            isStartTiming = true;
+            //Strart the timer
+            if (isStartMoving && !isStartTiming)
+            {
+                score.StartTimer();
+                isStartTiming = true;
+            }
         }
     }
 
@@ -52,7 +57,8 @@ public class Player : MonoBehaviour
     {
         speed = 0;
 
-        if(factory.PizzaCount > 0 && collision.gameObject.CompareTag("Vehicle")) 
+        //Allows the top pizza box to fall
+        if (factory.PizzaCount > 0 && collision.gameObject.CompareTag("Vehicle")) 
         {
             factory.PizzaList[^1].transform.parent = null;
 

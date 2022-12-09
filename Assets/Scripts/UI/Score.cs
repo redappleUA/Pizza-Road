@@ -8,20 +8,32 @@ public class Score : MonoBehaviour
 {
     [SerializeField] int time;
     private int remainingTime;
-    public string timer { get; private set; }
+
+    /// <summary>
+    /// The current remaining time of timer
+    /// </summary>
+    public int timer { get; private set; }
+
+    /// <summary>
+    /// Highscore
+    /// </summary>
     public string highscore { get; private set; }
 
     private float playerPos;
     private bool checkPos = true;
-    private uint fallPizzaCount = 0;
-    public uint ScorePoint { get; private set; }
 
-    private GameOverScreen gameOverScreen;
+    /// <summary>
+    /// Count of falled pizzas
+    /// </summary>
+    public int fallPizzaCount { get; private set; } = 0;
+
+    /// <summary>
+    /// the Score
+    /// </summary>
+    public int ScorePoint { get; private set; }
 
     void Start()
     {
-        gameOverScreen = FindObjectOfType<GameOverScreen>(true);
-
         if (PlayerPrefs.HasKey("Highscore") == true)
         {
             highscore = PlayerPrefs.GetInt("Highscore").ToString();
@@ -40,20 +52,23 @@ public class Score : MonoBehaviour
             checkPos = false;
         }
 
-        if(transform.position.x > playerPos + 5)
+        if (transform.position.x > playerPos + 5)
         {
-            if (!gameOverScreen.gameObject.activeSelf)
+            if (!Death.isDefeat) //After death do not encrease the score
             {
                 ScorePoint++;
                 checkPos = true;
             }
         }
+
+        if (ScorePoint < 0) ScorePoint = 0; //Score cant be less the zero
     }
 
     public void PizzaFalling()
     {
         fallPizzaCount++;
-        ScorePoint -= 2 * fallPizzaCount;
+        if (!Death.isDefeat)
+            ScorePoint -= 2 * fallPizzaCount;
     }
 
     public void StartTimer()
@@ -74,9 +89,11 @@ public class Score : MonoBehaviour
 
     public void SetHighscore()
     {
-        PlayerPrefs.SetInt("Highscore", (int)ScorePoint);
-        highscore = PlayerPrefs.GetInt("Highscore").ToString();
-
+        if(PlayerPrefs.GetInt("Highscore") < ScorePoint)
+        {
+            PlayerPrefs.SetInt("Highscore", ScorePoint);
+            highscore = PlayerPrefs.GetInt("Highscore").ToString();
+        }
     }
 
     public void ClearHighscores()
@@ -90,9 +107,10 @@ public class Score : MonoBehaviour
         while (true)
         {
             remainingTime -= 1;
-            timer = remainingTime.ToString() + " sec";
+            timer = remainingTime;
             yield return new WaitForSeconds(1f);
 
+            //If timer is end
             if (remainingTime == 0)
             {
                 Death.Defeat(gameObject);

@@ -19,11 +19,13 @@ public class GameOverScreen : MonoBehaviour
         hudScreen = FindObjectOfType<HUDScreen>();
         scorePoint = FindObjectOfType<Score>();
     }
-    public static void RestartButtonPressed()
+    void RestartButtonPressed()
     {
+        Factory.spawnCount = 4;
         Time.timeScale = 1;
         SceneManager.LoadScene("Game");
     }
+
     public static void ExitButtonPressed() => Application.Quit();
     public void OpenGameOverScreen()
     {
@@ -36,7 +38,7 @@ public class GameOverScreen : MonoBehaviour
         exitButton = root.Q<Button>("ExitButton");
         score = root.Q<Label>("Score");
 
-        restartButton.clicked += delegate () { FinishScreen.NextButtonPressed(); };
+        restartButton.clicked += RestartButtonPressed;
         exitButton.clicked += ExitButtonPressed;
 
         score.text = "Score: " + scorePoint.ScorePoint.ToString();

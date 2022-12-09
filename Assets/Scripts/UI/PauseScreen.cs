@@ -30,7 +30,7 @@ public class PauseScreen : MonoBehaviour
         exitButton = root.Q<Button>("ExitButton");
 
         resumeButton.clicked += ResumeButtonClicked;
-        restartButton.clicked += delegate () { GameOverScreen.RestartButtonPressed(); };
+        restartButton.clicked += RestartButtonPressed;
         exitButton.clicked += delegate () { GameOverScreen.ExitButtonPressed(); };
 
         Time.timeScale = 0;
@@ -42,5 +42,12 @@ public class PauseScreen : MonoBehaviour
         gameObject.SetActive(false);
         screen.OpenHUDScreen();
         score.ResumeTimer();
+    }
+
+    void RestartButtonPressed()
+    {
+        Factory.spawnCount = 4;
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Game");
     }
 }

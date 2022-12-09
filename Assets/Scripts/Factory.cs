@@ -5,11 +5,12 @@ using UnityEngine;
 public class Factory : MonoBehaviour
 {
     [SerializeField] List<GameObject> roads = new();
+    [SerializeField] List<GameObject> houses = new();
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject pizzaHouse;
     [SerializeField] GameObject pizzaPrefab;
     [SerializeField] GameObject finishTrigger;
-    [SerializeField] int spawnCount;
+    public static int spawnCount { get; set; } = 4;
 
     private GameObject player;
     private const float roadLength = 12;
@@ -45,7 +46,9 @@ public class Factory : MonoBehaviour
         lastValue = val;
         return val;
     }
-
+    /// <summary>
+    /// Spawns the road
+    /// </summary>
     void SpawnRoad()
     {
         for (int i = 0; i <= spawnCount; i++)
@@ -61,15 +64,17 @@ public class Factory : MonoBehaviour
                 Instantiate(roads[0], currentPosition, Quaternion.identity);
                 Instantiate(finishTrigger, currentPosition, Quaternion.identity);
 
-                currentPosition.x += 6;
-                Instantiate(HouseSpawner.house, currentPosition, Quaternion.Euler(0, -90, 0));
+                currentPosition.x += roadLength;
+                Instantiate(houses[Random.Range(0, houses.Count)], currentPosition, Quaternion.Euler(0, -90, 0));
             }
         }
     }
-
+    /// <summary>
+    /// Spawns pizza's on the back of bike
+    /// </summary>
     void PizzaSpawn()
     {
-        PizzaCount = Random.Range(2, 5);
+        PizzaCount = 4;
         Vector3 pizzaSpawnPos = new(-1.868f, 1.378f, 0.013f);
 
         for (int i = 0; i < PizzaCount; i++)

@@ -20,17 +20,16 @@ public class CameraWalker : MonoBehaviour
     }
     void FixedUpdate()
     {
-        
         if (playerInst.isStartMoving)
         {
-            if (playerInst.speed < 1)
+            if (playerInst.speed <= 2) //If player stops
             {
                 if (FinishScreen.isFinished is false)
                 {
                     transform.position += speedToDeath * Time.fixedDeltaTime * Vector3.right;
                     offsetStop = transform.position - player.transform.position;
 
-                    if (offsetStop.magnitude < magnitudeToDeath)
+                    if (offsetStop.magnitude < magnitudeToDeath) //Defeat if the player is off screen
                     {
                         Death.Defeat(player);
                     }
@@ -38,7 +37,7 @@ public class CameraWalker : MonoBehaviour
             }
             else
             {
-                if (offsetStop.magnitude < offset.magnitude)
+                if (offsetStop.magnitude < offset.magnitude) //The camera catches up with the player
                 {
                     transform.position += speedToDeath * Time.fixedDeltaTime * Vector3.right;
                     offsetStop = transform.position - player.transform.position;

@@ -22,7 +22,7 @@ public class HUDScreen : MonoBehaviour
         if (player.isStartMoving)
         {
             score.text = scorePoint.ScorePoint.ToString();
-            timer.text = scorePoint.timer.ToString();
+            timer.text = scorePoint.timer.ToString() + " sec";
         }
 
         if(Time.timeScale < 1) gameObject.SetActive(false);

@@ -6,11 +6,6 @@ public class HouseSpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> houses = new();
     [SerializeField] Transform spawnPos;
-    public static GameObject house { get; private set; }
-    private void Awake()
-    {
-        house = houses[Random.Range(0, houses.Count)];
-    }
     private void Start()
     { 
         HouseSpawn();
